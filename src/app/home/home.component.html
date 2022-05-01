@@ -1,0 +1,22 @@
+<div class='home'>
+  <h1>{{ title }}</h1>
+  
+  <button [disabled]='clicked' (click)='handleClick()'>
+    Show me!
+  </button>
+  
+  <div *ngFor='let car of cars | async'>
+    <div class='car-name' [ngClass]='{
+      "available": car.available === true,
+      "not-available": car.available === false
+    }'>
+      <h3>
+        {{ car.manufacturer }}
+      </h3>
+      <h4>{{ car.model }}</h4>
+    </div>
+  
+    <img [src]='car.img' appMagnifier>
+    <p>Year: {{ car.year | year }}</p>
+  </div>
+</div>
