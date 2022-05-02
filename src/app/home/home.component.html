@@ -1,9 +1,6 @@
 <div class='home'>
   <h1>{{ title }}</h1>
-  
-  <button [disabled]='clicked' (click)='handleClick()'>
-    Show me!
-  </button>
+  <h2>See our cars below!</h2>
   
   <div *ngFor='let car of cars | async'>
     <div class='car-name' [ngClass]='{

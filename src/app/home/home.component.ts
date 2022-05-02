@@ -17,6 +17,8 @@ type Car = {
 })
 export class HomeComponent implements OnInit {
   cars: Observable<Car[]>;
+  
+  title = `Running on Angular ${VERSION.full}!`;
 
   constructor() {
     this.cars = of<Car[]>([])
@@ -47,12 +49,4 @@ export class HomeComponent implements OnInit {
       }
     ])
   };
-
-  clicked = false;
-  title = `Running on Angular ${VERSION.full}!`;
-
-  handleClick() {
-    this.clicked = true;
-  }
-
 } 
